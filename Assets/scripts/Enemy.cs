@@ -12,14 +12,22 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject EnemyBulletPrefav;
     [SerializeField] Transform EnemyBulletSpawn;
     [SerializeField] float delay;
+    private Coroutine shootingCoroutine;
+
 
     [Header("Health")]
     [SerializeField] int HPEnemy;
     #endregion
     #region base methods
+
+    private void Start()
+    {
+        shootingCoroutine = StartCoroutine(HandleEnemyShooting());
+    }
+
     private void Update()
     {
-        HandleEnemyShooting();
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -31,27 +39,32 @@ public class Enemy : MonoBehaviour
     }
     #endregion
     #region custom methods
-    protected virtual void HandleEnemyShooting()
+    private IEnumerator HandleEnemyShooting()
     {
-        delay =- Time.deltaTime;
-
-        if (delay <= 0)
+        while (true)
         {   
             GameObject bullet = Instantiate(EnemyBulletPrefav, EnemyBulletSpawn.position, EnemyBulletSpawn.rotation);
-           
+            Debug.Log("dispara enemigo");
+
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
                 rb.velocity = EnemyBulletSpawn.up * EnemyBulletVel; 
             }
+
+            yield return new WaitForSeconds(delay);
         }
+
+
     }
     protected virtual void HandleEnemyHealth()
     {
-        --HPEnemy; 
+        --HPEnemy;
+        Debug.Log("daño enemigo");
         if(HPEnemy <= 0)
         {
             Destroy(gameObject);
+            Debug.Log("muere enemigo");
         }
     }
     #endregion

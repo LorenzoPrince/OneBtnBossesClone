@@ -279,7 +279,6 @@ Transform:
   - {fileID: 1809505132}
   - {fileID: 1156822260}
   - {fileID: 1657085859}
-  - {fileID: 1240512302}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1037218138
@@ -346,7 +345,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 6.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1240512302}
   m_Father: {fileID: 1037218139}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1117954647
@@ -361,11 +361,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a3d9e7f33684d4a960ffd01b49030a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyBulletVel: 0
-  EnemyBulletPrefav: {fileID: 8704136883406980669, guid: 9eff0cbde2db8414eb5a9fe76b354170, type: 3}
+  EnemyBulletVel: 5
+  EnemyBulletPrefav: {fileID: 5346377610811109330, guid: 1fd98e4473d80464fbfa43937b6c40f6, type: 3}
   EnemyBulletSpawn: {fileID: 1240512302}
   delay: 2
-  HPEnemy: 0
+  HPEnemy: 3
 --- !u!61 &1117954648
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -518,13 +518,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240512301}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.64, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.99997187, w: 0.007501486}
+  m_LocalPosition: {x: 0, y: -0.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 661086252}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 1117954646}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 179.14}
 --- !u!1 &1657085858
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,7 +572,7 @@ GameObject:
   - component: {fileID: 1692393028}
   m_Layer: 0
   m_Name: pj.temp
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
