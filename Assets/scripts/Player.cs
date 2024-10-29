@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Scripting;
 
@@ -8,8 +9,13 @@ public class Player : MonoBehaviour
 {
     #region Variables
     [Header("movimiento")]
-    public float velocidad = 5f;
+    [SerializeField] float velocidad = 5f;
     private Vector3 direccion = Vector3.forward;
+
+    [Header("disparo")]
+    [SerializeField] GameObject bulletPrefab; 
+    [SerializeField] Transform shootPoint; 
+    [SerializeField] float bulletSpeed = 20f; 
 
     #endregion
     #region base methods
@@ -21,7 +27,10 @@ public class Player : MonoBehaviour
             HandleMovement();
         }
 
-        
+        if (Input.GetKeyDown(KeyCode.A)) 
+        {
+            handleShooting();
+        }
     }
     #endregion
     #region custom variables
@@ -38,6 +47,13 @@ public class Player : MonoBehaviour
     protected virtual void handleShooting()
     {
 
+        GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
+
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.velocity = shootPoint.up * bulletSpeed; 
+        }
     }
     #endregion
 }
