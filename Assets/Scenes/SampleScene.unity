@@ -279,6 +279,7 @@ Transform:
   - {fileID: 1809505132}
   - {fileID: 1156822260}
   - {fileID: 1657085859}
+  - {fileID: 1240512302}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1037218138
@@ -345,8 +346,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 6.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1240512302}
+  m_Children: []
   m_Father: {fileID: 1037218139}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1117954647
@@ -362,8 +362,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyBulletVel: 0
-  EnemyBulletPrefav: {fileID: 0}
-  EnemyBulletSpawn: {fileID: 0}
+  EnemyBulletPrefav: {fileID: 8704136883406980669, guid: 9eff0cbde2db8414eb5a9fe76b354170, type: 3}
+  EnemyBulletSpawn: {fileID: 1240512302}
   delay: 2
   HPEnemy: 0
 --- !u!61 &1117954648
@@ -518,12 +518,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240512301}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 6.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1117954646}
+  m_Father: {fileID: 661086252}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1657085858
 GameObject:
