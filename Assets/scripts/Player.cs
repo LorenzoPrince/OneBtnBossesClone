@@ -15,10 +15,15 @@ public class Player : MonoBehaviour
     [Header("disparo")]
     [SerializeField] GameObject bulletPrefab; 
     [SerializeField] Transform shootPoint; 
-    [SerializeField] float bulletSpeed = 20f; 
-
+    [SerializeField] float bulletSpeed = 20f;
+    [SerializeField] float fireRate = 1f;
     #endregion
     #region base methods
+
+    private void Start()
+    {
+        StartCoroutine(handleShooting());
+    }
     void Update()
     {
         transform.RotateAround(Vector3.zero, direccion, velocidad * Time.deltaTime);
@@ -26,10 +31,19 @@ public class Player : MonoBehaviour
         {
             HandleMovement();
         }
-
-        if (Input.GetKeyDown(KeyCode.A)) 
+    }
+    private IEnumerator handleShooting()
+    {
+        while (true)
         {
-            handleShooting();
+            GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
+
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.velocity = shootPoint.up * bulletSpeed;
+            }
+            yield return new WaitForSeconds(fireRate);
         }
     }
     #endregion
@@ -42,18 +56,6 @@ public class Player : MonoBehaviour
     protected virtual void handleHealth()
     {
 
-    }
-
-    protected virtual void handleShooting()
-    {
-
-        GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
-
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-            rb.velocity = shootPoint.up * bulletSpeed; 
-        }
     }
     #endregion
 }

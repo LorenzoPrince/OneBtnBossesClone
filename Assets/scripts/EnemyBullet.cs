@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[RequireComponent(typeof(Rigidbody2D))]
-public class Player_Bullet : MonoBehaviour
+
+public class EnemyBullet : MonoBehaviour
 {
     #region variables
     [SerializeField] float timer;
@@ -12,7 +12,7 @@ public class Player_Bullet : MonoBehaviour
     #region base methods
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Player"))
         {
             Destroy(gameObject);
         }
