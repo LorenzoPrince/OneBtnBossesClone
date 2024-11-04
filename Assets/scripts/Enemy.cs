@@ -63,7 +63,8 @@ public class Enemy : MonoBehaviour
         Debug.Log("daño enemigo");
         if(HPEnemy <= 0)
         {
-            Destroy(gameObject);
+            //funcion para mostrar UI de victoria (no se como hacer esto)
+            //funcion para freezear el juego (no se como es el comando)
             Debug.Log("muere enemigo");
         }
     }
