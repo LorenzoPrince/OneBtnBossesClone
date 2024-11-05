@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
     {
         alive = true;
         CurrentHP = MaxHP;
+        deathPanel.SetActive(false);
     }
 
 
