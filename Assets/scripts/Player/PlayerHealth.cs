@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.UI;
 
 [RequireComponent(typeof(Player))]
-public class PlayerHelth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     #region variables
     [Header("HP")]
     [SerializeField] int MaxHP = 3;
     [SerializeField] int CurrentHP;
     private bool alive;
-
+    [SerializeField] GameObject deathPanel;
     #endregion
     #region base methods
     void Awake()
@@ -37,10 +38,8 @@ public class PlayerHelth : MonoBehaviour
         if(CurrentHP <= 0) 
         { 
             alive = false;
-
-            //funcion para freezear el juego (no se como es el comando)
-
-            //funcion para mostrar UI de muerte  (no se como hacer para q aparezca)
+            Time.timeScale = 0f;
+            deathPanel.SetActive(true);
         }
     }
     #endregion

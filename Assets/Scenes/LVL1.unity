@@ -1084,7 +1084,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1617245848}
         m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
-        m_MethodName: Resetart
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1627,7 +1627,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1617245848}
         m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
-        m_MethodName: Resetart
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2430,7 +2430,7 @@ MonoBehaviour:
   EnemyBulletVel: 5
   EnemyBulletPrefav: {fileID: 5346377610811109330, guid: 1fd98e4473d80464fbfa43937b6c40f6, type: 3}
   EnemyBulletSpawn: {fileID: 1240512302}
-  delay: 2
+  delay: 0
   HPEnemy: 150
 --- !u!61 &1117954648
 BoxCollider2D:
@@ -2881,7 +2881,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1259438284
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3674,6 +3674,7 @@ GameObject:
   - component: {fileID: 1692393026}
   - component: {fileID: 1692393025}
   - component: {fileID: 1692393028}
+  - component: {fileID: 1692393029}
   m_Layer: 0
   m_Name: pj.temp
   m_TagString: Player
@@ -3838,6 +3839,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1692393029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692393023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 334c9371896418f4386e4281ce61f24e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHP: 3
+  CurrentHP: 0
+  deathPanel: {fileID: 455413810}
 --- !u!1 &1712943722
 GameObject:
   m_ObjectHideFlags: 0
@@ -4060,7 +4076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1775469360
 RectTransform:
   m_ObjectHideFlags: 0

@@ -64,7 +64,7 @@ public class Enemy : MonoBehaviour
         if(HPEnemy <= 0)
         {
             //funcion para mostrar UI de victoria (no se como hacer esto)
-            //funcion para freezear el juego (no se como es el comando)
+            Time.timeScale = 0f;
             Debug.Log("muere enemigo");
         }
     }

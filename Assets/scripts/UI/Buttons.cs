@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour
 {
-    public void start()
+    public void StartGame()
     {
         SceneManager.LoadScene("WRLDSELECT");
     }
@@ -20,13 +20,19 @@ public class Buttons : MonoBehaviour
         //abre UI options en menues
     }
 
-    public void Resetart()
+    public void Restart()
     {
-        //restartea el lvl en el que esta el jugador (desconosco el como podria hacerse)
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void ReturnMenu()
     {
         SceneManager.LoadScene("STARTMENU");
+    }
+
+    public void Lvl1Select()
+    {
+        SceneManager.LoadScene("LVL1");
     }
 }
