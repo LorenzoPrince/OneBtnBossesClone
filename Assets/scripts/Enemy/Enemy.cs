@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
 
     [Header("Health")]
     [SerializeField] int HPEnemy;
+    private GameManager victoryPanel;
     #endregion
     #region base methods
 
@@ -63,7 +64,7 @@ public class Enemy : MonoBehaviour
         Debug.Log("daño enemigo");
         if(HPEnemy <= 0)
         {
-            //funcion para mostrar UI de victoria (no se como hacer esto)
+            victoryPanel.gameObject.SetActive(true);
             Time.timeScale = 0f;
             Debug.Log("muere enemigo");
         }

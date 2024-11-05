@@ -2881,7 +2881,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1259438284
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3323,6 +3323,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1617245847}
   - component: {fileID: 1617245848}
+  - component: {fileID: 1617245849}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3357,6 +3358,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcd1c38a8ae76b84a9e8675aad14f0ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1617245849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617245846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2b03e224d8d7845a4a258318c035cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathPanel: {fileID: 455413810}
+  victoryPanel: {fileID: 1259438283}
 --- !u!1 &1639033381
 GameObject:
   m_ObjectHideFlags: 0
