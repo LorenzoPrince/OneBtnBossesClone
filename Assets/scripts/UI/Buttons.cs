@@ -17,7 +17,7 @@ public class Buttons : MonoBehaviour
 
     public void Options()
     {
-        //abre UI options en menues
+        //abre UI options en menues (crear si pedido, sino sacar)
     }
 
     public void Restart()

@@ -7,11 +7,14 @@ using Unity.UI;
 public class PlayerHealth : MonoBehaviour
 {
     #region variables
+
     [Header("HP")]
     [SerializeField] int MaxHP = 3;
     [SerializeField] int CurrentHP;
-    private bool alive;
     [SerializeField] GameObject deathPanel;
+
+    private bool alive;
+    
     #endregion
     #region base methods
     void Awake()
@@ -20,8 +23,6 @@ public class PlayerHealth : MonoBehaviour
         CurrentHP = MaxHP;
         deathPanel.SetActive(false);
     }
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (alive == true && collision.CompareTag("Enemy_Bullet"))
@@ -30,7 +31,6 @@ public class PlayerHealth : MonoBehaviour
             handleHealth();
         }
     }
-
 
     #endregion
     #region custom methods

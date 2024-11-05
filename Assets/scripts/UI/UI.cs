@@ -5,20 +5,46 @@ using TMPro;
 
 public class UI : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI timerText;
-    [SerializeField] TextMeshProUGUI currentTime;
-    [SerializeField] TextMeshProUGUI BestTime;
+    [SerializeField] List<TextMeshProUGUI> besttimetxt;
+    [SerializeField] List<TextMeshProUGUI> currenttimetxt;
+    [SerializeField] TextMeshProUGUI record;
 
-    private float timer;
+    private float currentTime;
+    private float bestTime;
+
+    void Awake()
+    {
+        bestTime = PlayerPrefs.GetFloat("BestTime", Mathf.Infinity);
+        record.gameObject.SetActive(false); 
+    }
 
     void Update()
     {
-        timer += Time.deltaTime;
-        int minutes = Mathf.FloorToInt(timer / 60);
-        int seconds = Mathf.FloorToInt(timer % 60);
-        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        currentTime += Time.deltaTime;
 
-        currentTime.text = timerText.text;
+        if (currentTime > bestTime)
+        {
+            bestTime = currentTime;
+            PlayerPrefs.SetFloat("BestTime", bestTime);  
 
+            record.gameObject.SetActive(true);
+        }
+
+        //estan separados en 2 porque sino no funcionaba
+        float bestMinutes = Mathf.Floor(bestTime / 60);
+        float bestSeconds = bestTime % 60;
+
+        float currentMinutes = Mathf.Floor(currentTime / 60);
+        float currentSeconds = currentTime % 60;
+
+        foreach (TextMeshProUGUI t in besttimetxt)
+        {
+            t.text = string.Format("Best Time: {0:00}:{1:00}", bestMinutes, bestSeconds);
+        }
+        foreach (TextMeshProUGUI t in currenttimetxt)
+        {
+            t.text = string.Format("Current Time: {0:00}:{1:00}", currentMinutes, currentSeconds);
+        }
     }
 }
+
