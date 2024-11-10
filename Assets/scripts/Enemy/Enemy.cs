@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     #region variables
     [Header("shooting")]
     [SerializeField] float EnemyBulletVel;
-    [SerializeField] GameObject EnemyBulletPrefav;
+    [SerializeField] GameObject EnemyBulletPrefab;
     [SerializeField] Transform EnemyBulletSpawn;
     [SerializeField] float delay;
 
@@ -18,7 +18,8 @@ public class Enemy : MonoBehaviour
     [Header("Health")]
     [SerializeField] int HPEnemy;
 
-    private GameManager victoryPanel;
+    [SerializeField] GameObject victoryPanel;
+    //public GameManager victoryPanel;
     #endregion
     #region base methods
 
@@ -40,13 +41,13 @@ public class Enemy : MonoBehaviour
     private IEnumerator HandleEnemyShooting()
     {
         while (true)
-        {   
-            GameObject bullet = Instantiate(EnemyBulletPrefav, EnemyBulletSpawn.position, EnemyBulletSpawn.rotation);         
+        {
+            GameObject bullet = Instantiate(EnemyBulletPrefab, EnemyBulletSpawn.position, EnemyBulletSpawn.rotation);
 
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
-                rb.velocity = EnemyBulletSpawn.up * EnemyBulletVel; 
+                rb.velocity = EnemyBulletSpawn.up * EnemyBulletVel;
             }
 
             yield return new WaitForSeconds(delay);
@@ -55,12 +56,12 @@ public class Enemy : MonoBehaviour
     protected virtual void HandleEnemyHealth()
     {
         --HPEnemy;
-        
-        if(HPEnemy <= 0)
+
+        if (HPEnemy <= 0)
         {
-            victoryPanel.gameObject.SetActive(true);
+            victoryPanel.SetActive(true);
             Time.timeScale = 0f;
-            
+
         }
     }
     #endregion
