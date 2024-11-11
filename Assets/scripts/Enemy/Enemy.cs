@@ -7,13 +7,6 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     #region variables
-    [Header("shooting")]
-    [SerializeField] float EnemyBulletVel;
-    [SerializeField] GameObject EnemyBulletPrefab;
-    [SerializeField] Transform EnemyBulletSpawn;
-    [SerializeField] float delay;
-
-    private Coroutine shootingCoroutine;
 
     [Header("Health")]
     [SerializeField] int HPEnemy;
@@ -25,7 +18,6 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        shootingCoroutine = StartCoroutine(HandleEnemyShooting());
         Time.timeScale = 1f;
     }
 
@@ -38,21 +30,6 @@ public class Enemy : MonoBehaviour
     }
     #endregion
     #region custom methods
-    private IEnumerator HandleEnemyShooting()
-    {
-        while (true)
-        {
-            GameObject bullet = Instantiate(EnemyBulletPrefab, EnemyBulletSpawn.position, EnemyBulletSpawn.rotation);
-
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                rb.velocity = EnemyBulletSpawn.up * EnemyBulletVel;
-            }
-
-            yield return new WaitForSeconds(delay);
-        }
-    }
     protected virtual void HandleEnemyHealth()
     {
         --HPEnemy;
@@ -61,7 +38,6 @@ public class Enemy : MonoBehaviour
         {
             victoryPanel.SetActive(true);
             Time.timeScale = 0f;
-
         }
     }
     #endregion
