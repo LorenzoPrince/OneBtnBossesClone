@@ -13,7 +13,7 @@ public class EnemyConeAttack : MonoBehaviour
 
     private void Awake()
     {
-        StartCoroutine(HandleCones());
+        StartCoroutine((string)HandleCones());
     }
 
     IEnumerable HandleCones()

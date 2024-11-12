@@ -1043,8 +1043,8 @@ Canvas:
   m_GameObject: {fileID: 455413810}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1679,8 +1679,8 @@ Canvas:
   m_GameObject: {fileID: 703818524}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -2661,7 +2661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a3d9e7f33684d4a960ffd01b49030a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HPEnemy: 100
+  HPEnemy: 3
   victoryPanel: {fileID: 1259438283}
 --- !u!61 &1117954648
 BoxCollider2D:
@@ -3186,8 +3186,8 @@ Canvas:
   m_GameObject: {fileID: 1259438283}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -4188,6 +4188,7 @@ GameObject:
   - component: {fileID: 1692393026}
   - component: {fileID: 1692393025}
   - component: {fileID: 1692393028}
+  - component: {fileID: 1692393030}
   m_Layer: 0
   m_Name: pj.temp
   m_TagString: Player
@@ -4367,6 +4368,26 @@ MonoBehaviour:
   MaxHP: 3
   CurrentHP: 0
   deathPanel: {fileID: 455413810}
+--- !u!114 &1692393030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692393023}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bced2a1512643a4faddea1bda8ae806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalSpeed: 5
+  boostedSpeed: 10
+  energy: 100
+  energyDrainRate: 20
+  rechargeRate: 10
+  rechargeDelay: 2
+  energySlider: {fileID: 1365138744}
+  playerRb: {fileID: 1692393025}
 --- !u!1 &1712943722
 GameObject:
   m_ObjectHideFlags: 0
@@ -4700,8 +4721,8 @@ Canvas:
   m_GameObject: {fileID: 1775469359}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
